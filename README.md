@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Ensure you are on Node.js 20 LTS (tested with 20.11.1). With nvm:
+
+```bash
+nvm install 20.11.1
+nvm use 20.11.1
+```
+
 First, run the development server:
 
 ```bash
