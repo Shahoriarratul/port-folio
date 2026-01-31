@@ -17,9 +17,12 @@ const asap = Asap({
 });
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     function handleResize() {
       setIsMobile(window.innerWidth < 640);
     }
@@ -28,10 +31,6 @@ export default function Home() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  if (isMobile === null) {
-    return null;
-  }
 
   return (
     <main

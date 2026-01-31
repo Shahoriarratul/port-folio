@@ -5,8 +5,10 @@ import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import Hero3d from "@/components/Hero3d";
+import dynamic from "next/dynamic";
 import { SlArrowDown } from "react-icons/sl";
+
+const Hero3d = dynamic(() => import("@/components/Hero3d"), { ssr: false });
 
 // border-4 border-white
 export default function Hero({ isMobile }: { isMobile?: boolean }) {
