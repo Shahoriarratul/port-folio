@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Asap } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const asap = Asap({
+  weight: "100",
+  style: "normal",
+  preload: true,
+  subsets: ["latin", "latin-ext", "vietnamese"],
+});
 
 export const metadata: Metadata = {
   title: "Shahoriar Ratul",
