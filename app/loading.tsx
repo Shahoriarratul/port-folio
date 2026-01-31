@@ -7,7 +7,6 @@ export default function loading() {
       <div className=" flex items-center justify-center">
         <PropagateLoader color="#000" />
       </div>
-      ;
     </div>
   );
 }

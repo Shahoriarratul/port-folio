@@ -1,6 +1,8 @@
 "use client";
 
-import Skill3d from "@/components/Skill3d";
+import dynamic from "next/dynamic";
+
+const Skill3d = dynamic(() => import("@/components/Skill3d"), { ssr: false });
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -66,15 +68,19 @@ const fadeInAnimationVariants = {
 
 export default function Skills() {
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
+    setMounted(true);
+    
     function handleResize() {
-      setIsMobile(window.innerWidth < 640); // Adjust this threshold as needed
+      setIsMobile(window.innerWidth < 640);
     }
 
-    handleResize(); // Call it initially to set the state
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [setIsMobile]);
+  }, []);
   return (
     <div
       id="Skills"
